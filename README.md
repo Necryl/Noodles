@@ -1,50 +1,20 @@
-# React + TypeScript + Vite
+# Noodles
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**WORK IN PROGRESS**
 
-Currently, two official plugins are available:
+Noodles is a personal pet project aimed at creating a versatile translator that converts any data into an interactive node graph based on a user-defined blueprint. The idea is simple: you provide the data and a blueprint, and Noodles generates a node graph that you can then interact with to edit or explore the data.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Vision
 
-## Expanding the ESLint configuration
+Initially, I'm focusing on supporting a few programming languages and common flowchart use cases. However, the long-term goal is to develop a blueprint system flexible and robust enough to handle virtually any type of "language" or data structure.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Core Components
 
-- Configure the top-level `parserOptions` property like this:
+To make this work, I need to define:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **The Blueprint System**: A framework for users to specify how data should be interpreted and structured.
+- **The Node Graph Language**: A representation system for the graphs, which may borrow elements from the blueprints to ensure compatibility and expressiveness.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Stay tuned as I continue to build and refine this project!
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+![Noodles Flow Chart](NoodlesFlowchart.jpg)
