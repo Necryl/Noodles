@@ -11,7 +11,14 @@
 @tailwind utilities;
 
 /* ... */
-
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
 :root {
   font-family: var(--exo-2-font);
   --background: oklch(1 0 0);

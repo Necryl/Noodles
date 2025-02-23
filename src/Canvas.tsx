@@ -24,7 +24,6 @@ const Container = styled.div.attrs<{ height: string; width: string }>(
     style: {
       height: props.height,
       width: props.width,
-      border: "1px solid black",
     },
   })
 )``;
