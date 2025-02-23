@@ -27,7 +27,7 @@ export default function App() {
             <ResizablePanel>Text Editor</ResizablePanel>
             <ResizableHandle />
             <ResizablePanel>
-              <Canvas height={100 + "%"} width={100 + "%"} />
+              <Canvas />
             </ResizablePanel>
           </ResizablePanelGroup>
         </TabsContent>

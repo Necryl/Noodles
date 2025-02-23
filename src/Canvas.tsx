@@ -19,22 +19,12 @@ const initialNodes = [
   { id: "2", position: { x: 0, y: 100 }, data: { label: "2" } },
 ];
 const initialEdges = [{ id: "e1-2", source: "1", target: "2" }];
-const Container = styled.div.attrs<{ height: string; width: string }>(
-  (props) => ({
-    style: {
-      height: props.height,
-      width: props.width,
-    },
-  })
-)``;
-export default function App({
-  height,
-  width,
-}: {
-  height: string;
-  width: string;
-}) {
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+const Container = styled.div`
+  height: 100%;
+  width: 100%;
+`;
+export default function App() {
+  const [nodes, , onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
   const onConnect = useCallback(
@@ -43,7 +33,7 @@ export default function App({
   );
 
   return (
-    <Container height={height} width={width}>
+    <Container>
       <ReactFlow
         nodes={nodes}
         edges={edges}
