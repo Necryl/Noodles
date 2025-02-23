@@ -1,3 +1,5 @@
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
 import {
   ResizableHandle,
   ResizablePanel,
@@ -14,15 +16,25 @@ const Container = styled.div`
 export default function App() {
   return (
     <Container id="App">
-      <ResizablePanelGroup direction="vertical">
-        <ResizablePanel>
+      <Tabs defaultValue="main" style={{ height: "100%" }}>
+        <TabsList>
           <h1>Noodles</h1>
-        </ResizablePanel>
-        <ResizableHandle />
-        <ResizablePanel>
-          <Canvas height={100 + "%"} width={100 + "%"} />
-        </ResizablePanel>
-      </ResizablePanelGroup>
+          <TabsTrigger value="main">Main</TabsTrigger>
+          <TabsTrigger value="text">Text</TabsTrigger>
+        </TabsList>
+        <TabsContent value="main">
+          <ResizablePanelGroup direction="horizontal">
+            <ResizablePanel>Text Editor</ResizablePanel>
+            <ResizableHandle />
+            <ResizablePanel>
+              <Canvas height={100 + "%"} width={100 + "%"} />
+            </ResizablePanel>
+          </ResizablePanelGroup>
+        </TabsContent>
+        <TabsContent value="text">
+          <h1>Text Editor</h1>
+        </TabsContent>
+      </Tabs>
     </Container>
   );
 }
